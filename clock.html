@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+        <style>
+            body{
+                background-color: rgb(195, 230, 195);
+            }
+            h1 {
+                text-align: center;
+                font-family: "Andale Mono", "monospace";
+            }
+            #outer{
+                border: 5px groove rgb(55, 54, 63);
+                position: fixed;
+                width: 400px;
+                height: 300px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 5px 10px 8px #6d6d6d;
+                background-color: rgb(87, 87, 87);
+                /*background: rgb(34, 214, 34);*/
+            }
+            #inner{
+                position: fixed;
+                border: 5px inset rgb(55, 54, 63);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-family: "Andale Mono", "monospace";
+                font-size: 50px;
+                color: rgb(12, 248, 12);
+                background-color: rgb(55, 54, 63);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>JS Clock</h1>
+
+        <div id = "outer">
+            <div id="inner">
+                
+            </div>
+        </div>
+
+        <script>
+            var clock = document.getElementById("inner");
+            
+            function updateTime(){
+                var date = new Date();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                if (hour < "10"){ hour = "0" + hour};
+                if (minute < "10"){ minute = "0" + minute};
+                if (second < "10"){ second = "0" + second};
+                clock.innerHTML = hour + ":" + minute + ":" + second;
+            }
+
+            function formatTime(hour, minute, second){
+                
+            }
+
+            setInterval(updateTime, 1000);
+            //console.log("hello")
+        </script>
+    </body>
+</html>
