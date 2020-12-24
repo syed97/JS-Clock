@@ -3,14 +3,22 @@
     <head>
         <title>Clock</title>
         <style>
-            body {
+            @font-face {
+                    font-family: "digital-7";
+                    src: url("digital-7 (italic).ttf");
+                }
+            body{
                 background-color: rgb(195, 230, 195);
             }
             h1 {
                 text-align: center;
-                font-family: "Andale Mono", "monospace";
+                font-family: Georgia, serif;
             }
-            #outer {
+            p {
+                text-align: center;
+                font-family: Georgia, serif;
+            }
+            #outer{
                 border: 5px groove rgb(55, 54, 63);
                 position: fixed;
                 width: 400px;
@@ -22,28 +30,65 @@
                 background-color: rgb(87, 87, 87);
                 /*background: rgb(34, 214, 34);*/
             }
-            #inner {
+            #inner{
                 position: fixed;
                 border: 5px inset rgb(55, 54, 63);
+                padding: 4px;
                 top: 50%;
                 left: 50%;
+                width: 151px;
+                height: 51px;
+                font-family: "digital-7";
                 transform: translate(-50%, -50%);
                 text-align: center;
-                font-family: "Andale Mono", "monospace";
                 font-size: 50px;
                 color: rgb(12, 248, 12);
                 background-color: rgb(55, 54, 63);
             }
+            #button1 {
+                top: 80%;
+                left: 10%;
+            }
+            #button2 {
+                top: 80%;
+                left: 25%;
+            }
+            .button{
+                border: 1px solid black;
+                border-radius: 50%;
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                font-family: 'Courier New', Courier, monospace;
+                cursor: pointer;
+                outline: none;
+                color: rgb(27, 4, 65);
+                background-color: #4CAF50;
+                box-shadow: 2px 3px rgb(116, 116, 116);
+            }
+
+            .button:hover {background-color: #3e8e41}
+
+            .button:active {
+                background-color: #3e8e41;
+                box-shadow: 1px 1px #666;
+                transform: translateY(2px);
+                transform: translateX(1px);
+                }
+
         </style>
     </head>
     
     <body>
         <h1>JS Clock</h1>
+        <p><em><strong>Just you everyday clock</strong></em></p>
 
         <div id = "outer">
-            <div id="inner">
-                
-            </div>
+            <div id="inner"></div>
+
+            <!--<div id="button"></div>-->
+            <button class="button" id="button1">12 hr</button>
+            <button class="button" id="button2">24 hr</button>
         </div>
 
         <script>
